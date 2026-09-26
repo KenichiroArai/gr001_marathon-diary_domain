@@ -37,7 +37,7 @@ mvn package
 ## ディレクトリ構成
 
 ```text
-src/main/java/kmg/marathondiary/domain/
+src/main/java/kmg/gr/gr001/domain/
   service/             # ドメインサービスインタフェース
   service/impl/        # 実装（@Service）
 src/test/java/         # テスト

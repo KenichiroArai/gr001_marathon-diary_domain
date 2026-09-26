@@ -10,4 +10,4 @@
  *
  * @version 0.1.0
  */
-package kmg.marathondiary.domain.service;
+package kmg.gr.gr001.domain.service;

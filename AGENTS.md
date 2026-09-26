@@ -19,10 +19,10 @@ Cursor / Codex / Claude Code など複数ツールで共通利用する。
 ## ディレクトリ構成
 
 ```text
-src/main/java/kmg/marathondiary/domain/
+src/main/java/kmg/gr/gr001/domain/
   service/             # ドメインサービスインタフェース
   service/impl/        # 実装（@Service）
-src/test/java/kmg/marathondiary/domain/
+src/test/java/kmg/gr/gr001/domain/
 ```
 
 ## ビルド・テスト
