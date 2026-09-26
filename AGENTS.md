@@ -6,31 +6,39 @@ Cursor / Codex / Claude Code など複数ツールで共通利用する。
 ## プロジェクト概要
 
 - **役割**: マラソン日記のドメインロジック
-- **含むもの**: ドメインモデル、ビジネスルール、ユースケース相当のロジック
-- **含めないもの**: （記入例: HTTP/API 層、UI、DB マイグレーション本体）
+- **含むもの**: ドメインモデル、ビジネスルール、ユースケース相当のロジック（サービス）
+- **含めないもの**: HTTP/API 層、UI、DB マイグレーション本体、起動クラス
 
 ## 技術スタック
 
-- 言語 / ランタイム: （TODO）
-- ビルド / パッケージ管理: （TODO）
-- テスト: （TODO）
+- 言語 / フレームワーク: Java 25 / Spring Boot 4.1.1（`spring-boot-starter` のみ。Web なし）
+- ビルド / パッケージ管理: Maven（`spring-boot-starter-parent` 4.1.1、`packaging` jar）
+- 基盤ライブラリ: kmg-core / kmg-fund（常時依存）
+- テスト: JUnit 5（`spring-boot-starter-test`）/ JaCoCo 0.8.14（行・分岐 100%）
 
 ## ディレクトリ構成
 
 ```text
-# TODO: 実際の構成に合わせて更新する
-# src/
-# tests/
+src/main/java/kmg/marathondiary/domain/
+  service/             # ドメインサービスインタフェース
+  service/impl/        # 実装（@Service）
+src/test/java/kmg/marathondiary/domain/
 ```
 
 ## ビルド・テスト
 
 ```bash
-# TODO: 実際のコマンドに置き換える
-# ビルド:
-# テスト:
-# リント:
+# テスト（JaCoCo レポート + カバレッジ 100% チェック）:
+mvn test
+
+# パッケージ（通常 jar）:
+mvn package
 ```
+
+- カバレッジレポート: `target/site/jacoco/index.html`
+- Eclipse 共有用実行データ: `target/jacoco.exec`
+- 行 / 分岐カバレッジが 100% 未満だと `mvn test` は失敗する
+- 成果物: `target/gr001_marathon-diary_domain-0.1.0.jar`（実行可能 fat jar ではない）
 
 ## 作業時の原則
 
@@ -334,6 +342,7 @@ public class SampleClass {
 ## 関連リポジトリ
 
 - 仕様: `kb001_marathon-diary_doc`
+- API: `gr001_marathon-diary_api`
 
 ## 参考リンク
 
